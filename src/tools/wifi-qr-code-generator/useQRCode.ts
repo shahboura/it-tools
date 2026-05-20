@@ -1,5 +1,6 @@
-import { type MaybeRef, get } from '@vueuse/core';
-import QRCode, { type QRCodeToDataURLOptions } from 'qrcode';
+import type { QRCodeToDataURLOptions } from 'qrcode';
+import { get } from '@vueuse/core';
+import QRCode from 'qrcode';
 import { isRef, ref, watch } from 'vue';
 
 export const wifiEncryptions = ['WEP', 'WPA', 'nopass', 'WPA2-EAP'] as const;
@@ -42,7 +43,7 @@ interface IWifiQRCodeOptions {
   eapAnonymous: MaybeRef<boolean>
   eapIdentity: MaybeRef<string>
   eapPhase2Method: MaybeRef<EAPPhase2Method>
-  color: { foreground: MaybeRef<string>; background: MaybeRef<string> }
+  color: { foreground: MaybeRef<string>, background: MaybeRef<string> }
   options?: QRCodeToDataURLOptions
 }
 

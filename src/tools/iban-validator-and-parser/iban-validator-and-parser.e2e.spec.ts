@@ -1,13 +1,15 @@
-import { type Page, expect, test } from '@playwright/test';
+import type { Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 async function extractIbanInfo({ page }: { page: Page }) {
   const itemsLines = await page
-    .locator('.c-key-value-list__item').all();
+    .locator('.c-key-value-list__item')
+    .all();
 
   return await Promise.all(
     itemsLines.map(async item => [
-      (await item.locator('.c-key-value-list__key').textContent() ?? '').trim(),
-      (await item.locator('.c-key-value-list__value').textContent() ?? '').trim(),
+      (await item.locator('.c-key-value-list__key').innerText() ?? '').trim(),
+      (await item.locator('.c-key-value-list__value').innerText() ?? '').trim(),
     ]),
   );
 }
@@ -42,7 +44,7 @@ test.describe('Tool - Iban validator and parser', () => {
 
     expect(ibanInfo).toEqual([
       ['Is IBAN valid ?', 'No'],
-      ['IBAN errors', 'Wrong account bank branch checksum Wrong IBAN checksum'],
+      ['IBAN errors', 'Wrong account bank branch checksum\nWrong IBAN checksum'],
       ['Is IBAN a QR-IBAN ?', 'No'],
       ['Country code', 'N/A'],
       ['BBAN', 'N/A'],

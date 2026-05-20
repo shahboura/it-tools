@@ -1,6 +1,6 @@
 import { Base64 } from 'js-base64';
 
-export { textToBase64, base64ToText, isValidBase64, removePotentialDataAndMimePrefix };
+export { base64ToText, isValidBase64, removePotentialDataAndMimePrefix, textToBase64 };
 
 function textToBase64(str: string, { makeUrlSafe = false }: { makeUrlSafe?: boolean } = {}) {
   const encoded = Base64.encode(str);
@@ -20,7 +20,8 @@ function base64ToText(str: string, { makeUrlSafe = false }: { makeUrlSafe?: bool
   try {
     return Base64.decode(cleanStr);
   }
-  catch (_) {
+  catch (_e) {
+    void _e;
     throw new Error('Incorrect base64 string');
   }
 }
@@ -42,7 +43,8 @@ function isValidBase64(str: string, { makeUrlSafe = false }: { makeUrlSafe?: boo
     }
     return reEncodedBase64 === cleanStr.replace(/\s/g, '');
   }
-  catch (err) {
+  catch (_err) {
+    void _err;
     return false;
   }
 }
@@ -55,7 +57,7 @@ function unURI(encoded: string): string {
   return encoded
     .replace(/-/g, '+')
     .replace(/_/g, '/')
-    .replace(/[^A-Za-z0-9+/]/g, '');
+    .replace(/[^A-Z0-9+/]/gi, '');
 }
 
 function removePotentialPadding(str: string) {

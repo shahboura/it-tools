@@ -1,11 +1,12 @@
-export { isNotThrowing, booleanToHumanReadable };
+export { booleanToHumanReadable, isNotThrowing };
 
 function isNotThrowing(cb: () => unknown): boolean {
   try {
     cb();
     return true;
   }
-  catch (_) {
+  catch (_e) {
+    void _e;
     return false;
   }
 }

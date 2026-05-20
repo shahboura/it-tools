@@ -12,7 +12,7 @@ test.describe('Tool - Password strength analyser', () => {
   test('Computes the brute force attack time of a password', async ({ page }) => {
     await page.getByTestId('password-input').fill('ABCabc123!@#');
 
-    const crackDuration = await page.getByTestId('crack-duration').textContent();
+    const crackDuration = await page.getByTestId('crack-duration').innerText();
 
     expect(crackDuration).toEqual('15,091 millennia, 3 centuries');
   });

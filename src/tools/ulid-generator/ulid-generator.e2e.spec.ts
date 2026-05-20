@@ -12,11 +12,11 @@ test.describe('Tool - ULID generator', () => {
   });
 
   test('the refresh button generates a new ulid', async ({ page }) => {
-    const ulid = await page.getByTestId('ulids').textContent();
+    const ulid = await page.getByTestId('ulids').innerText();
     expect(ulid?.trim()).toMatch(ULID_REGEX);
 
     await page.getByTestId('refresh').click();
-    const newUlid = await page.getByTestId('ulids').textContent();
+    const newUlid = await page.getByTestId('ulids').innerText();
     expect(ulid?.trim()).not.toBe(newUlid?.trim());
     expect(newUlid?.trim()).toMatch(ULID_REGEX);
   });
