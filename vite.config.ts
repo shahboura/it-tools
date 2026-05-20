@@ -12,7 +12,7 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import markdown from 'vite-plugin-vue-markdown';
+import markdown from 'unplugin-vue-markdown/vite';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 
@@ -56,6 +56,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
+      workbox: {
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+      },
       manifest: {
         name: 'IT Tools',
         description: 'Aggregated set of useful tools for developers.',
@@ -108,6 +111,7 @@ export default defineConfig({
     'import.meta.env.PACKAGE_VERSION': JSON.stringify(process.env.npm_package_version),
   },
   test: {
+    environment: 'jsdom',
     exclude: [...configDefaults.exclude, '**/*.e2e.spec.ts'],
   },
   build: {

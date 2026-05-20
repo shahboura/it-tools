@@ -1,26 +1,24 @@
 <script lang="ts" setup>
+import type { ToolCategory } from '@/tools/tools.types';
+
+import { Heart, Home2, Menu2 } from '@vicons/tabler';
 import { NIcon, useThemeVars } from 'naive-ui';
 
-import { RouterLink } from 'vue-router';
-import { Heart, Home2, Menu2 } from '@vicons/tabler';
-
 import { storeToRefs } from 'pinia';
+import { RouterLink } from 'vue-router';
+import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
+import { config } from '@/config';
+import { useStyleStore } from '@/stores/style.store';
+import { useToolStore } from '@/tools/tools.store';
 import HeroGradient from '../assets/hero-gradient.svg?component';
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
-import { useStyleStore } from '@/stores/style.store';
-import { config } from '@/config';
-import type { ToolCategory } from '@/tools/tools.types';
-import { useToolStore } from '@/tools/tools.store';
-import { useTracker } from '@/modules/tracker/tracker.services';
-import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
 const version = config.app.version;
 const commitSha = config.app.lastCommitSha.slice(0, 7);
 
-const { tracker } = useTracker();
 const { t } = useI18n();
 
 const toolStore = useToolStore();
@@ -63,7 +61,7 @@ const tools = computed<ToolCategory[]>(() => [
           <div>
             IT-Tools
 
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/shahboura/it-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
 
@@ -73,7 +71,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/shahboura/it-tools/tree/${commitSha}`"
               >
                 {{ commitSha }}
               </c-link>
@@ -128,7 +126,7 @@ const tools = computed<ToolCategory[]>(() => [
             target="_blank"
             class="support-button"
             :bordered="false"
-            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
+            @click="() => {}"
           >
             {{ $t('home.buyMeACoffee') }}
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />

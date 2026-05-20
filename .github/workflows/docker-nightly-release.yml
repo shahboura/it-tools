@@ -30,9 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
       - run: corepack enable
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -83,5 +83,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            corentinth/it-tools:nightly
-            ghcr.io/corentinth/it-tools:nightly
+            shahboura/it-tools:nightly
+            ghcr.io/shahboura/it-tools:nightly

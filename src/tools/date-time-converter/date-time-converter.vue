@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { DateFormat, ToDateMapper } from './date-time-converter.types';
 import {
   formatISO,
   formatISO9075,
@@ -12,7 +13,8 @@ import {
   parseISO,
   parseJSON,
 } from 'date-fns';
-import type { DateFormat, ToDateMapper } from './date-time-converter.types';
+import { useValidation } from '@/composable/validation';
+import { withDefaultOnError } from '@/utils/defaults';
 import {
   dateToExcelFormat,
   excelFormatToDate,
@@ -23,11 +25,9 @@ import {
   isRFC3339DateString,
   isRFC7231DateString,
   isTimestamp,
-  isUTCDateString,
   isUnixTimestamp,
+  isUTCDateString,
 } from './date-time-converter.models';
-import { withDefaultOnError } from '@/utils/defaults';
-import { useValidation } from '@/composable/validation';
 
 const inputDate = ref('');
 
@@ -73,7 +73,7 @@ const formats: DateFormat[] = [
   {
     name: 'Timestamp',
     fromDate: date => String(getTime(date)),
-    toDate: ms => parseJSON(+ms),
+    toDate: ms => parseJSON(String(ms)),
     formatMatcher: date => isTimestamp(date),
   },
   {
@@ -110,6 +110,7 @@ const normalizedDate = computed(() => {
     return toDate(inputDate.value);
   }
   catch (_ignored) {
+    void _ignored;
     return undefined;
   }
 });

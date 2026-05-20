@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { generateKeyPair } from './rsa-key-pair-generator.service';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
-import { withDefaultOnErrorAsync } from '@/utils/defaults';
-import { useValidation } from '@/composable/validation';
 import { computedRefreshableAsync } from '@/composable/computedRefreshable';
+import { useValidation } from '@/composable/validation';
+import { withDefaultOnErrorAsync } from '@/utils/defaults';
+import { generateKeyPair } from './rsa-key-pair-generator.service';
 
 const bits = ref(2048);
 const emptyCerts = { publicKeyPem: '', privateKeyPem: '' };
@@ -39,11 +39,11 @@ const [certs, refreshCerts] = computedRefreshableAsync(
 
   <div>
     <h3>Public key</h3>
-    <TextareaCopyable :value="certs.publicKeyPem" />
+    <TextareaCopyable v-if="certs" :value="certs.publicKeyPem" />
   </div>
 
   <div>
     <h3>Private key</h3>
-    <TextareaCopyable :value="certs.privateKeyPem" />
+    <TextareaCopyable v-if="certs" :value="certs.privateKeyPem" />
   </div>
 </template>

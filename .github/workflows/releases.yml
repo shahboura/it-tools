@@ -42,10 +42,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            corentinth/it-tools:latest
-            corentinth/it-tools:${{ env.RELEASE_VERSION }}
-            ghcr.io/corentinth/it-tools:latest
-            ghcr.io/corentinth/it-tools:${{ env.RELEASE_VERSION}}
+            shahboura/it-tools:latest
+            shahboura/it-tools:${{ env.RELEASE_VERSION }}
+            ghcr.io/shahboura/it-tools:latest
+            ghcr.io/shahboura/it-tools:${{ env.RELEASE_VERSION}}
 
   github-release:
     runs-on: ubuntu-latest
@@ -59,9 +59,9 @@ jobs:
 
       - run: corepack enable
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -93,11 +93,11 @@ jobs:
             ## Docker images
 
             - Docker Hub
-              - `corentinth/it-tools:latest`
-              - `corentinth/it-tools:${{ env.RELEASE_VERSION }}`
+              - `shahboura/it-tools:latest`
+              - `shahboura/it-tools:${{ env.RELEASE_VERSION }}`
             - GitHub Container Registry
-              - `ghcr.io/corentinth/it-tools:latest`
-              - `ghcr.io/corentinth/it-tools:${{ env.RELEASE_VERSION}}`
+              - `ghcr.io/shahboura/it-tools:latest`
+              - `ghcr.io/shahboura/it-tools:${{ env.RELEASE_VERSION}}`
 
             ## Changelog
 
