@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*.*.*'
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   docker-release:
     runs-on: ubuntu-latest
@@ -81,8 +85,13 @@ jobs:
           node ./scripts/getLatestChangelog.mjs >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
 
+      - name: Delete existing draft release
+        run: gh release delete "v${{ env.RELEASE_VERSION }}" --yes || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: it-tools-${{ env.RELEASE_VERSION }}.zip
