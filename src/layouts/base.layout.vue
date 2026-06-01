@@ -79,7 +79,7 @@ const tools = computed<ToolCategory[]>(() => [
           </div>
           <div>
             © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://tools.elhadidy.synology.me?utm_source=it-tools&utm_medium=footer">
+            <c-link target="_blank" rel="noopener" href="https://github.com/shahboura">
               Shehab ElHadidy
             </c-link>
           </div>
