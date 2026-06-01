@@ -11,6 +11,4 @@ export const config = {
     baseUrl: import.meta.env.BASE_URL || '/',
     env: appEnv,
   },
-  showBanner: import.meta.env.VITE_SHOW_BANNER === 'true',
-  showSponsorBanner: import.meta.env.VITE_SHOW_SPONSOR_BANNER === 'true',
 };

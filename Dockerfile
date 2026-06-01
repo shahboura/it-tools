@@ -1,8 +1,11 @@
 # build stage
-FROM node:lts-alpine AS build-stage
+# Pin to builder's native platform to avoid QEMU emulation for Vite/Rolldown (Rust native binaries)
+FROM --platform=$BUILDPLATFORM node:lts-alpine AS build-stage
 # Set environment variables for non-interactive npm installs
 ENV NPM_CONFIG_LOGLEVEL=warn
 ENV CI=true
+ARG VITE_VERCEL_GIT_COMMIT_SHA
+ENV VITE_VERCEL_GIT_COMMIT_SHA=$VITE_VERCEL_GIT_COMMIT_SHA
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm && pnpm i --frozen-lockfile

@@ -8,15 +8,6 @@ home:
   toggleMenu: 'Toggle menu'
   home: Home
   uiLib: 'UI Lib'
-  support: 'Apoyar el desarrollo de IT-Tools'
-  buyMeACoffee: 'Buy me a coffee'
-  follow:
-    title: 'Te gustan las it-tools?'
-    p1: 'Danos una estrella en'
-    githubRepository: 'Repositorio de IT-Tools en GitHub'
-    p2: 'o síguenos en'
-    twitterXAccount: 'Cuenta de X de IT-Tools'
-    thankYou: 'Muchas gracias!'
   nav:
     github: 'Repositorio en github'
     githubRepository: 'IT-Tools GitHub repository'
@@ -33,7 +24,7 @@ about:
 
     Este maravilloso sitio web, hecho con ❤ por [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) , agrega herramientas útiles para desarrolladores y personas que trabajan en IT. Si lo encuentra útil, no dude en compartirlo con las personas que crea que también pueden encontrarlo útil y ¡no olvide marcarlo como favorito en su barra de accesos directos!
 
-    IT Tools es de código abierto (under the GPL-3.0 license) y gratis, y siempre lo será, pero me cuesta dinero alojar y renovar el nombre de dominio. Si desea apoyar mi trabajo y animarme a agregar más herramientas, considere apoyarme a través de[sponsoring me](https://www.buymeacoffee.com/cthmsst).
+    IT Tools es de código abierto (bajo la licencia GPL-3.0) y gratis, y siempre lo será.
 
     ## Tecnologías
 

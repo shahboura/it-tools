@@ -8,15 +8,6 @@ home:
   toggleMenu: 'Vekslemenmy'
   home: Hjem
   uiLib: 'UI Bib'
-  support: 'Støtt utviklingen av IT-Tools'
-  buyMeACoffee: 'Kjøp en kaffe til meg'
-  follow:
-    title: 'Liker du it-tools?'
-    p1: 'Gi oss en stjerne på'
-    githubRepository: 'IT-Tools GitHub-depotet'
-    p2: 'eller følg oss på'
-    twitterXAccount: 'IT-Tools sin X konto'
-    thankYou: 'Tusen takk!'
   nav:
     github: 'GitHub-depot'
     githubRepository: 'IT-Tools GitHub-depot'
@@ -33,7 +24,7 @@ about:
 
     Denne vidunderlige nettsiden, laget med ❤ av [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) , sammenstiller nyttige verktøy for utviklere og folk som jobber innen IT. Hvis du finner dette nyttig, Del det gjerne med andre som du tror kan få nytte av dette, og ikke glem å lage et bokmerke!
 
-    IT Tools er åpen kildekode (under GPL-3.0 lisensen) og gratis, og det vil det alltid være, men det koster å drifte og å fornye domenet. Hvis du ønsker å støtte arbeidet mitt, og motivere meg til å legge til flere verktøy, gjerne støtt meg ved å [sponse meg](https://www.buymeacoffee.com/cthmsst).
+    IT Tools er åpen kildekode (under GPL-3.0 lisensen) og gratis, og det vil det alltid være.
 
     ## Teknologier
 
