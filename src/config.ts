@@ -6,7 +6,7 @@ const appEnv: AppEnv = appEnvValues.includes(envValue as AppEnv) ? (envValue as 
 
 export const config = {
   app: {
-    version: import.meta.env.PACKAGE_VERSION || '0.0.0',
+    releaseTag: import.meta.env.VITE_RELEASE_TAG || '',
     lastCommitSha: import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA || '',
     baseUrl: import.meta.env.BASE_URL || '/',
     env: appEnv,

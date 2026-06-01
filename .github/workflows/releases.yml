@@ -47,6 +47,7 @@ jobs:
           push: true
           build-args: |
             VITE_VERCEL_GIT_COMMIT_SHA=${{ github.sha }}
+            VITE_RELEASE_TAG=v${{ env.RELEASE_VERSION }}
           tags: |
             shahboura/it-tools:latest
             shahboura/it-tools:${{ env.RELEASE_VERSION }}
@@ -75,6 +76,8 @@ jobs:
 
       - name: Build the app
         run: pnpm build
+        env:
+          VITE_RELEASE_TAG: v${{ env.RELEASE_VERSION }}
 
       - name: Zip the app
         run: zip -r it-tools-${{ env.RELEASE_VERSION }}.zip dist/*
