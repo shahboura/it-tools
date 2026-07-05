@@ -91,7 +91,7 @@
     "ulid": "^3.0.2",
     "unicode-emoji-json": "^0.9.0",
     "unplugin-auto-import": "^21.0.0",
-    "uuid": "^14.0.0",
+    "uuid": "^14.0.1",
     "vue": "^3.5.34",
     "vue-i18n": "^11.4.4",
     "vue-router": "^5.0.7",
