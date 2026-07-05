@@ -9,13 +9,13 @@ ENV VITE_VERCEL_GIT_COMMIT_SHA=$VITE_VERCEL_GIT_COMMIT_SHA
 ARG VITE_RELEASE_TAG
 ENV VITE_RELEASE_TAG=$VITE_RELEASE_TAG
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN npm install -g pnpm && pnpm i --frozen-lockfile
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN corepack enable && pnpm i --frozen-lockfile
 COPY . .
 RUN pnpm build
 
 # production stage
-FROM nginx:stable-alpine AS production-stage
+FROM nginx:stable-alpine-slim AS production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080
