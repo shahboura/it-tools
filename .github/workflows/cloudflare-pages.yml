@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - feat/cloudflare-pages-deploy
+      - main
 
 concurrency:
   group: cloudflare-${{ github.ref }}
@@ -28,6 +28,7 @@ jobs:
       - name: Build the app
         run: pnpm build
         env:
+          VITE_CLOUDFLARE_GIT_COMMIT_SHA: ${{ github.sha }}
           VITE_VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
 
       - name: Deploy to Cloudflare Pages
