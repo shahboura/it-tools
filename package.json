@@ -131,7 +131,7 @@
     "hygen": "^6.2.11",
     "jsdom": "^29.1.1",
     "less": "^4.6.4",
-    "prettier": "^3.8.3",
+    "prettier": "^3.9.5",
     "typescript": "~6.0.3",
     "unocss": "^66.7.5",
     "unocss-preset-scrollbar": "^4.0.0",
