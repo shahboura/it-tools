@@ -95,6 +95,20 @@ pnpm build
 pnpm test
 ```
 
+### Run E2E Tests with [Playwright](https://playwright.dev/)
+
+Install the Playwright browsers once. Browsers are versioned with `@playwright/test`, so re-run this after a dependency update:
+
+```sh
+pnpm exec playwright install
+```
+
+The end-to-end tests build and serve the app automatically:
+
+```sh
+pnpm test:e2e
+```
+
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
