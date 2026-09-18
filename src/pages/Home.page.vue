@@ -22,7 +22,6 @@ function onUpdateFavoriteTools() {
 <template>
   <div class="pt-50px">
     <div class="grid-wrapper">
-
       <transition name="height">
         <div v-if="toolStore.favoriteTools.length > 0">
           <h3 class="mb-5px mt-25px text-neutral-400 font-500">

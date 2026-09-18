@@ -28,7 +28,7 @@ export default defineConfig({
       fullInstall: true,
       strictMessage: false,
       include: [
-        resolve(__dirname, 'locales/**'),
+        resolve(import.meta.dirname, 'locales/**'),
       ],
     }),
     AutoImport({
@@ -97,6 +97,11 @@ export default defineConfig({
       dirs: ['src/'],
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      // The generated TSX `declare global` block uses component names as
+      // identifiers, which is invalid for names containing dots/colons
+      // (e.g. `404.page`, `Base.layout`, `IconMdi:brushVariant`). No `.tsx`
+      // file relies on those globals, so skip generating them.
+      dtsTsx: false,
       resolvers: [NaiveUiResolver(), IconsResolver({ prefix: 'icon' })],
     }),
     Unocss(),
