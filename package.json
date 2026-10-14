@@ -110,7 +110,7 @@
     "@tsconfig/node18": "^18.2.7",
     "@types/crypto-js": "^4.2.2",
     "@types/jsdom": "^30.0.0",
-    "@types/lodash": "^4.17.25",
+    "@types/lodash": "^4.17.26",
     "@types/mime-types": "^3.0.1",
     "@types/netmask": "^2.0.6",
     "@types/node": "^26.6.1",
