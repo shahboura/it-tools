@@ -54,7 +54,7 @@
     "change-case": "^5.4.4",
     "colord": "^2.10.0",
     "composerize-ts": "^0.6.2",
-    "country-code-lookup": "^0.1.5",
+    "country-code-lookup": "^0.2.1",
     "cron-validator": "^1.4.0",
     "cronstrue": "^3.38.0",
     "crypto-js": "^4.2.0",
