@@ -84,7 +84,7 @@
     "pdf-signature-reader": "^1.4.3",
     "pinia": "^4.1.0",
     "qrcode": "^1.5.4",
-    "randexp": "^0.5.3",
+    "randexp": "^0.6.1",
     "sql-formatter": "^15.9.0",
     "ua-parser-js": "^2.0.10",
     "ulid": "^3.0.2",
