@@ -84,6 +84,17 @@ tools:
     button:
       copy: Copy
       refresh: Refresh
+  cookie-secret-generator:
+    title: Cookie secret generator
+    description: Generate a cryptographically secure, URL-safe secret for oauth2-proxy cookie secrets or session signing keys.
+
+    byteLength: Length
+    secretPlaceholder: 'The generated secret...'
+    copied: Secret copied to the clipboard
+    note: Use this for oauth2-proxy cookie secrets or session signing keys. The value is generated locally with crypto.getRandomValues, as URL-safe base64 without padding, and never leaves your browser.
+    button:
+      copy: Copy
+      refresh: Refresh
   percentage-calculator:
     title: Percentage calculator
     description: Easily calculate percentages from a value to another value, or from a percentage to a value.
