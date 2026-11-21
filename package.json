@@ -79,7 +79,7 @@
     "monaco-editor": "^0.57.0",
     "naive-ui": "^2.45.3",
     "netmask": "^2.1.1",
-    "node-forge": "^1.4.2",
+    "node-forge": "^1.4.3",
     "oui-data": "^2.1.22",
     "pdf-signature-reader": "^1.4.3",
     "pinia": "^4.1.0",
