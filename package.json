@@ -97,7 +97,7 @@
     "vue-shadow-dom": "^4.2.0",
     "vue-tsc": "^3.3.13",
     "vuedraggable": "^4.1.0",
-    "xml-formatter": "^3.7.0",
+    "xml-formatter": "^3.7.1",
     "xml-js": "^1.6.11",
     "yaml": "^2.9.1"
   },
